@@ -41,20 +41,23 @@ const deleteContact=(id)=>{
 }
 
 // Edit Contact
-const editContact=async(id, name, phone, email, street, suite, city, zipcode)=>{
-    const response=await fetch(`${host}${id}`,{
-        method:'PUT',
-        body: JSON.stringify({
-            name: name,
-            phone: phone,
-            email: email
-          }),
+const editContact=async(id, name, phone, email)=>{
+    const response=await fetch(`${host}`,{
+        method:'POST',
+       
         headers:{
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({name, phone, email, street, suite, city, zipcode})
+        body: JSON.stringify({
+          id:`${id}`,
+          name: `${name}`,
+          email: `${email}`,
+          phone: `${phone}`
+        }),
+        // body: JSON.stringify({name, phone, email}),
     });
     const json = response.json();
+    console.log(json)
 
 
     let newContacts =JSON.parse(JSON.stringify(contacts));
