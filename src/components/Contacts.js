@@ -53,8 +53,8 @@ const Contacts = () => {
               <input
                 type="text"
                 className="form-control"
-                id="fname"
-                name="name"
+                id="ename"
+                name="ename"
                 placeholder="Name"
                 required
                 onChange={onChange}
@@ -65,8 +65,8 @@ const Contacts = () => {
               <input
                 type="text"
                 className="form-control"
-                id="phone"
-                name="phone"
+                id="ephone"
+                name="ephone"
                 placeholder="phone no."
                 required
                 onChange={onChange}
@@ -83,9 +83,9 @@ const Contacts = () => {
                 <input
                   type="text"
                   className="form-control"
-                  id="mail"
+                  id="email"
                   placeholder="email"
-                  name="email"
+                  name="eemail"
                   required
                   onChange={onChange}
                 />

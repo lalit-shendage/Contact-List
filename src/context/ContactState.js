@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ContactContext from "./ContactContext";
 
 const ContactState = (props) => {
-    const host="https://jsonplaceholder.typicode.com/users"
+  const host="https://jsonplaceholder.typicode.com/users"
   const contactsInitial = []
 // get contacts 
   const [contacts, setContacts] = useState(contactsInitial);
@@ -49,14 +49,14 @@ const editContact=async(id, name, phone, email)=>{
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          id:`${id}`,
-          name: `${name}`,
-          email: `${email}`,
-          phone: `${phone}`
+          id,
+          name,
+          email,
+          phone
         }),
         // body: JSON.stringify({name, phone, email}),
     });
-    const json = response.json();
+    const json =await response.json();
     console.log(json)
 
 
