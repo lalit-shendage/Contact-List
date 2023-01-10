@@ -68,6 +68,7 @@ const editContact=async(id, name, phone, email)=>{
           newContacts[index].name=name;
           newContacts[index].phone=phone;
           newContacts[index].email=email;
+          break;
         }
     }
 }
