@@ -2,12 +2,13 @@ import React, { useContext } from "react";
 import ContactContext from "../context/ContactContext";
 
 const ContactItem = (props) => {
-  
+  // context call
   const context = useContext(ContactContext);
   const {deleteContact}= context;
   const { contacts,updateContact } = props;
 
   return (
+    // card for contact
     <div>
       <div className="card mx-3 my-2 cardStyle text-center d-flex flex-row">
         <div className="card-body ">

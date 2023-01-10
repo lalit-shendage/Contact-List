@@ -6,7 +6,7 @@ const context=useContext(ContactContext);
 const{addContact}=context;
 
 const [contact,setContact]=useState({name:"",phone:"", email:""})
-
+  // submit button handler
   const submit = (e) => {
     e.preventDefault();
     addContact(contact.name,contact.phone, contact.email)
@@ -15,6 +15,7 @@ const [contact,setContact]=useState({name:"",phone:"", email:""})
     setContact({...contact, [e.target.name]:e.target.value})
   }
   return (
+    // form to add contact
     <div>
       <h2 className="text-center my-3">Add Contacts</h2>
       <div className="container ">
@@ -40,7 +41,6 @@ const [contact,setContact]=useState({name:"",phone:"", email:""})
                 id="phone"
                 name="phone"
                 placeholder="phone no."
-                // value=""
                 required
                 onChange={onChange}
               />

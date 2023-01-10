@@ -16,7 +16,7 @@ const Contacts = () => {
 
   const refClose=useRef(null)
   const [contact, setContact] = useState({ename:"", ephone:"", eemail:""});
-
+  // update contact 
   const updateContact = (currentContact) => {
     ref.current.click();
     console.log(currentContact);
@@ -38,6 +38,7 @@ const Contacts = () => {
   return (
     <>
       <AddContact />
+      {/* edit contact form using bottstrap modal */}
       <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
@@ -67,7 +68,6 @@ const Contacts = () => {
                 id="phone"
                 name="phone"
                 placeholder="phone no."
-                // value=""
                 required
                 onChange={onChange}
               />
@@ -93,8 +93,9 @@ const Contacts = () => {
             </div>
           </div>
           <div className="text-center ">
+          <button ref={refClose} type="button" className="btn btn-danger my-2 mx-2" data-bs-dismiss="modal">Close</button>
             <button
-              className="btn btn-primary w-25 submit"
+              className="btn btn-primary w-25 submit my-2 mx-2"
               type="submit"
               onClick={submit}
             >

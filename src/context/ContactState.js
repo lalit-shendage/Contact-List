@@ -4,7 +4,7 @@ import ContactContext from "./ContactContext";
 const ContactState = (props) => {
     const host="https://jsonplaceholder.typicode.com/users"
   const contactsInitial = []
-
+// get contacts 
   const [contacts, setContacts] = useState(contactsInitial);
   const getContacts=async()=>{
     const response=await fetch(`${host}`,{
@@ -55,18 +55,16 @@ const editContact=async(id, name, phone, email, street, suite, city, zipcode)=>{
         body: JSON.stringify({name, phone, email, street, suite, city, zipcode})
     });
     const json = response.json();
-    let newContact =JSON.parse(JSON.stringify(contacts));
 
+
+    let newContacts =JSON.parse(JSON.stringify(contacts));
+// edit contact logic 
     for (let index=0; index<contacts.length;index++){
-        const element =contacts[index];
+        const element =newContacts[index];
         if(element.id===id){
-            element.name=name;
-            element.phone=phone;
-            element.email=email;
-            element.address.street=street;
-            element.address.suite=suite;
-            element.address.city=city;
-            element.address.zipcode=zipcode;
+          newContacts[index].name=name;
+          newContacts[index].phone=phone;
+          newContacts[index].email=email;
         }
     }
 }
